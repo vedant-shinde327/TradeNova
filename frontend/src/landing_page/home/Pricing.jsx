@@ -26,7 +26,7 @@ function Pricing() {
               <small className="text-muted ms-2">
                 Free account <br />
                 opening
-              </small>
+              </small>    
             </div>
 
             <div className="d-flex align-items-center">

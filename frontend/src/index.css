@@ -1,0 +1,9 @@
+.nav-link {
+    margin-left: 40px;
+    display: flex;
+    font-weight: 480;
+}
+
+#navbarSupportedContent {
+    margin-left: 400px;
+}

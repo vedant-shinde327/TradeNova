@@ -4,10 +4,10 @@ function Hero() {
     return (
       <div className="container p-5 mb-5">
         <div className="row text-center">
-          <img src={HeroImg} className="mb-4"/>
+          <img src={HeroImg} className="m-auto" style={{width: "70%"}}/>
 
-          <h1 className="mt-4">Invest in everything</h1>
-          <p>
+          <h1 className="mt-5 text-muted fs-2">Invest in everything</h1>
+          <p className="fs-5 p-3 text-muted">
             Online platform to invest in stocks, derivatives, mutual funds,
             ETFs, bonds, and more.
           </p>
