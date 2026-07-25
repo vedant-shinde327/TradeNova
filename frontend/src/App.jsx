@@ -1,11 +1,34 @@
-import HomePage from "./landing_page/home/HomePage";
+import { Routes, Route } from "react-router-dom";   
+
+import Navbar from "./landing_page/Navbar";
+import Footer from "./landing_page/Footer";
+
+import Home from "./landing_page/home/HomePage";
+import SignUp from "./landing_page/signup/Signup";
+import About from "./landing_page/about/AboutPage";
+import Products from "./landing_page/products/ProductsPage";
+import Pricing from "./landing_page/pricing/PricingPage";
+import Support from "./landing_page/support/SupportPage";
+import NotFound from "./landing_page/NotFound";
+
+
 
 function App() {
-    return ( 
-        <>
-            <HomePage />
-        </>
-     );
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products/>} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/supprt" element={<Support />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 }
 
 export default App;

@@ -7,3 +7,13 @@
 #navbarSupportedContent {
     margin-left: 400px;
 }
+
+.footer-container {
+    background-color: #fbfbfb;
+    width: 100%;
+}
+
+.footer-links {
+    text-decoration: none;
+    
+}
