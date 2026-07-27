@@ -5,6 +5,8 @@ import Universe from "./Universe";
 import kiteImg from "../../assets/images/kite.png";
 import coinImg from "../../assets/images/coin.png";
 import varsityImg from "../../assets/images/varsity.png";
+import consoleImg from "../../assets/images/console.png";
+import kiteApiImg from "../../assets/images/kiteconnect.png";
 
 function ProductsPage() {
   return (
@@ -20,7 +22,12 @@ function ProductsPage() {
         appStore=""
       />
 
-      <RightSection />
+      <RightSection
+        imageUrl={consoleImg}
+        productName="Console"
+        productDescription="The central dashboard for your Zerodha account. Gain insights into your trades and investments with in-depth reports and visualisations."
+        tryDemo="Kite Connect "
+      />
 
       <LeftSection
         imageUrl={coinImg}
@@ -32,7 +39,12 @@ function ProductsPage() {
         appStore=""
       />
 
-      <RightSection />
+      <RightSection
+        imageUrl={kiteApiImg}
+        productName="Kite Connect API"
+        productDescription="Build powerful trading platforms and experiences with our super simple HTTP/JSON APIs. If you are a startup, build your investment app and showcase it to our clientbase."
+        tryDemo="Learn more "
+      />
 
       <LeftSection
         imageUrl={varsityImg}
@@ -43,6 +55,14 @@ function ProductsPage() {
         googlePlay=""
         appStore=""
       />
+
+      <p className="fs-5 text-center m-5">
+        Want to know more about our technology stack? Check out the{" "}
+        <a style={{ textDecoration: "none" }} href="">
+          TradeNova.tech{" "}
+        </a>
+        blog.
+      </p>
 
       <Universe />
     </>
