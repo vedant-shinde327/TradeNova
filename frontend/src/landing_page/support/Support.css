@@ -1,0 +1,286 @@
+/* Heading */
+
+.faq-title{
+    font-size:2rem;
+    font-weight:700;
+    color:#222;
+    margin-bottom:35px;
+}
+
+/* Accordion */
+
+.faq-accordion{
+    background:#fff;
+    border:1px solid #e9ecef;
+    border-radius:14px;
+    margin-bottom:18px;
+    overflow:hidden;
+    transition:all .3s ease;
+}
+
+.faq-accordion:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.faq-active{
+    border-color:#387ed1;
+    box-shadow:0 10px 25px rgba(56,126,209,.15);
+}
+
+/* Header */
+
+.faq-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 28px;
+    cursor:pointer;
+}
+
+.faq-header h5{
+    margin:0;
+    font-size:1.1rem;
+    font-weight:600;
+    color:#222;
+}
+
+/* Arrow */
+
+.faq-arrow{
+    color:#666;
+    transition:.3s;
+}
+
+.faq-arrow.rotate{
+    transform:rotate(180deg);
+    color:#387ed1;
+}
+
+/* Body */
+
+.faq-body{
+    padding:0 28px 22px;
+    border-top:1px solid #f1f1f1;
+}
+
+/* Links */
+
+.faq-link{
+    display:block;
+    text-decoration:none;
+    color:#387ed1;
+    padding:10px 0;
+    transition:.25s;
+    font-size:.97rem;
+}
+
+.faq-link:hover{
+    color:#285a96;
+    padding-left:8px;
+}
+
+.faq-accordion{
+
+    transition:.35s;
+
+}
+
+.faq-accordion:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.faq-body{
+
+    animation:showBody .35s ease;
+
+}
+
+@keyframes showBody{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .faq-title{
+        font-size:1.6rem;
+    }
+
+    .faq-header{
+        padding:18px 20px;
+    }
+
+    .faq-body{
+        padding:0 20px 18px;
+    }
+
+}
+
+/* Sidebar */
+
+.sidebar-card{
+
+    background:#fff;
+
+    border:1px solid #e9ecef;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    transition:.3s;
+}
+
+.sidebar-card:hover{
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.sidebar-heading{
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.sidebar-list{
+
+    padding-left:18px;
+
+}
+
+.sidebar-list li{
+
+    margin-bottom:16px;
+
+}
+
+.sidebar-list a{
+
+    text-decoration:none;
+
+    color:#387ed1;
+
+}
+
+.sidebar-list a:hover{
+
+    color:#285a96;
+
+}
+
+.quick-links{
+
+    padding-left:18px;
+
+}
+
+.quick-links li{
+
+    margin-bottom:14px;
+
+}
+
+.quick-links a{
+
+    text-decoration:none;
+
+    color:#387ed1;
+
+}
+
+.quick-links a:hover{
+
+    color:#285a96;
+
+}
+
+.support-page{
+    animation:fadeIn .7s ease;
+}
+
+.sidebar-card{
+
+    transition:.35s;
+
+}
+
+.sidebar-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.faq-link{
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.faq-link:hover{
+
+    padding-left:10px;
+
+}
+
+.faq-link::after{
+
+    content:"→";
+
+    opacity:0;
+
+    margin-left:8px;
+
+    transition:.3s;
+
+}
+
+.faq-link:hover::after{
+
+    opacity:1;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}

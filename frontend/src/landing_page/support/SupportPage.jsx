@@ -1,13 +1,16 @@
 import Hero from "./Hero";
-import CreateTicket from "./CreateTicket";
+import SupportContent from "./SupportContent";
+import "./Support.css";
 
 function SupportPage() {
-    return ( 
-        <>
-            <Hero />
-            <CreateTicket />
-        </>
-     );
+    return (
+      <>
+        <div className="support-page">
+          <Hero />
+          <SupportContent />
+        </div>
+      </>
+    );
 }
 
 export default SupportPage;
