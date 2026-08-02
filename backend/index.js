@@ -6,20 +6,31 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const cors = require("cors");   
+const cors = require("cors");
 
 const { HoldingModel } = require("./models/HoldingsModel");
-const {PositionModel} = require("./models/PositionModel");
-const {OrdersModel} = require("./models/OrdersModel");
+const { PositionModel } = require("./models/PositionModel");
+const { OrdersModel } = require("./models/OrdersModel");
 
 const app = express();
 
-app.use(cors());
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: [
+      "https://main.d1uye1swt7dwoe.amplifyapp.com/",
+      "https://main.d3uzyuty3j5aru.amplifyapp.com/",
+    ],
+
+    credentials: true,
+  }),
+);
 app.use(bodyParser.json());
 
 //temporary route
 // app.get("/addPositions", (req, res) =>{
-//   let tempPositions = 
+//   let tempPositions =
 //     [
 //   {
 //     product: "CNC",
@@ -61,17 +72,17 @@ app.use(bodyParser.json());
 //   res.send("positions saved to db");
 // });
 
-app.get("/allHoldings", async(req, res) =>{
+app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingModel.find({});
   res.json(allHoldings);
 });
 
-app.get("/allPositions", async(req, res) =>{
+app.get("/allPositions", async (req, res) => {
   let allPositions = await PositionModel.find({});
   res.json(allPositions);
 });
 
-app.post("/newOrder", async(req, res) =>{
+app.post("/newOrder", async (req, res) => {
   let newOrder = new OrdersModel({
     name: req.body.name,
     qty: req.body.qty,
