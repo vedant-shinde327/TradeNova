@@ -10,7 +10,7 @@ const cors = require("cors");
 
 const { HoldingModel } = require("./models/HoldingsModel");
 const {PositionModel} = require("./models/PositionModel");
-const {OrderModel} = require("./models/OrdersModel");
+const {OrdersModel} = require("./models/OrdersModel");
 
 const app = express();
 
@@ -72,7 +72,7 @@ app.get("/allPositions", async(req, res) =>{
 });
 
 app.post("/newOrder", async(req, res) =>{
-  let newOrder = new OrderModel({
+  let newOrder = new OrdersModel({
     name: req.body.name,
     qty: req.body.qty,
     price: req.body.price,

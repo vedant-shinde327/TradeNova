@@ -3,4 +3,4 @@ const {OrdersSchema} = require('../schemas/OrdersSchema');
 
 const OrdersModel = new model("order", OrdersSchema);
 
-module.exports = {OrderModel};
+module.exports = {OrdersModel};

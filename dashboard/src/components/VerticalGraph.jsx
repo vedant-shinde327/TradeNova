@@ -18,19 +18,35 @@ ChartJS.register(
   Legend,
 );
 
-export const options = {
+const options = {
   responsive: true,
+  maintainAspectRatio: false,
+
   plugins: {
     legend: {
-      position: "top",
+      display: false,
     },
     title: {
       display: true,
-      text: "Holdings",
+      text: "Holdings Value",
+      font: {
+        size: 18,
+      },
+    },
+  },
+
+  scales: {
+    x: {
+      grid: {
+        display: false,
+      },
+    },
+    y: {
+      beginAtZero: true,
     },
   },
 };
 
 export function VerticalGraph({ data }) {
-  return <Bar options={options} data={data} />;
+  return <Bar data={data} options={options} />;
 }
