@@ -5,11 +5,17 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const cors = require("cors");   
 
 const { HoldingModel } = require("./models/HoldingsModel");
-const {PositionModel} = require("./models/PositionModel")
+const {PositionModel} = require("./models/PositionModel");
+const {OrderModel} = require("./models/OrdersModel");
 
 const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
 
 //temporary route
 // app.get("/addPositions", (req, res) =>{
@@ -55,6 +61,28 @@ const app = express();
 //   res.send("positions saved to db");
 // });
 
+app.get("/allHoldings", async(req, res) =>{
+  let allHoldings = await HoldingModel.find({});
+  res.json(allHoldings);
+});
+
+app.get("/allPositions", async(req, res) =>{
+  let allPositions = await PositionModel.find({});
+  res.json(allPositions);
+});
+
+app.post("/newOrder", async(req, res) =>{
+  let newOrder = new OrderModel({
+    name: req.body.name,
+    qty: req.body.qty,
+    price: req.body.price,
+    mode: req.body.mode,
+  });
+
+  newOrder.save();
+
+  res.send("Order saved");
+});
 
 const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
