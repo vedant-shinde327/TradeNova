@@ -1,7 +1,7 @@
-function Apps() {
+function App() {
     return ( 
         <h1>Apps</h1>
     );
 }
 
-export default Apps;
+export default App;
