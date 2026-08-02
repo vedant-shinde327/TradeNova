@@ -4,7 +4,7 @@ import App from "./App";
 import Funds from "./Funds";
 import Holdings from "./Holdings";
 
-import Orders from "./order";
+import Orders from "./Order";
 import Positions from "./Positions";
 import Summary from "./Summary";
 import WatchList from "./WatchList";
