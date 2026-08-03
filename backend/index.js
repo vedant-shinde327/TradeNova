@@ -7,14 +7,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const { HoldingModel } = require("./models/HoldingsModel");
 const { PositionModel } = require("./models/PositionModel");
 const { OrdersModel } = require("./models/OrdersModel");
+const authRoute = require("./routes/AuthRoute");
 
 const app = express();
-
-const cors = require("cors");
 
 app.use(
   cors({
@@ -27,6 +27,9 @@ app.use(
   }),
 );
 app.use(bodyParser.json());
+app.use(express.json());
+app.use(cookieParser());
+app.use("/", authRoute);
 
 //temporary route
 // app.get("/addPositions", (req, res) =>{
@@ -108,6 +111,6 @@ mongoose
     });
   })
   .catch((err) => {
-    console.error(" MongoDB connection failed");
+    console.error("❌ MongoDB connection failed");
     console.error(err);
   });
