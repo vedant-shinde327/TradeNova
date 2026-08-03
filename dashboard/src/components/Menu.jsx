@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ProfileDropdown from "./ProfileDropdown";
 
-const Menu = () => {
+const Menu = ({username}) => {
 
   const [selectedMenu, setSelectedMenu] = useState(0);
   const [isProfileDropdownOpen, setProfileDropdownOpen] = useState(false);
@@ -98,9 +99,8 @@ const Menu = () => {
 
         </ul>
         <hr />
-        <div className="profile" onClick={() => handleProfileClick}>
-          <div className="avatar mb-4">ZU</div>
-          <p className="username ">USERID</p>
+        <div className="mb-4" onClick={() => handleProfileClick}>
+          <ProfileDropdown username={username} />
         </div>
       </div>
     </div>

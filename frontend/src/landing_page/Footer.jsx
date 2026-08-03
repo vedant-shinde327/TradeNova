@@ -28,19 +28,19 @@ function Footer() {
           <div className="col">
             <p>Account</p>
 
-            <a href="" className="text-muted footer-links">
+            <a href="/signup" className="text-muted footer-links">
               Open demat account
             </a>
             <br />
-            <a href="" className="text-muted footer-links">
+            <a href="/signup" className="text-muted footer-links">
               Minor demat account
             </a>
             <br />
-            <a href="" className="text-muted footer-links">
+            <a href="/signup" className="text-muted footer-links">
               NRI demat account
             </a>
             <br />
-            <a href="" className="text-muted footer-links">
+            <a href="/signup" className="text-muted footer-links">
               HUF demat account
             </a>
             <br />
@@ -53,7 +53,7 @@ function Footer() {
               Dematerialisation
             </a>
             <br />
-            <a href="" className="text-muted footer-links">
+            <a href="/" className="text-muted footer-links">
               Fund transfer
             </a>
             <br />
@@ -70,15 +70,15 @@ function Footer() {
               Contact us
             </a>
             <br />
-            <a href="" className="text-muted footer-links">
+            <a href="/support" className="text-muted footer-links">
               Support portal
             </a>
             <br />
-            <a href="" className="text-muted footer-links">
+            <a href="/support" className="text-muted footer-links">
               How to file a complaint?
             </a>
             <br />
-            <a href="" className="text-muted footer-links">
+            <a href="/support" className="text-muted footer-links">
               Status of your complaints
             </a>
             <br />
@@ -102,7 +102,7 @@ function Footer() {
 
           <div className="col">
             <p>Company</p>
-            <a href="" className="text-muted footer-links">
+            <a href="/about" className="text-muted footer-links">
               About
             </a>
             <br />
@@ -142,7 +142,7 @@ function Footer() {
               Upcoming IPOs
             </a>
             <br />
-            <a href="" className="text-muted footer-links">
+            <a href="/pricing" className="text-muted footer-links">
               Brokerage charges
             </a>
             <br />
@@ -154,7 +154,7 @@ function Footer() {
               Economic calendar
             </a>
             <br />
-            <a href="" className="text-muted footer-links">
+            <a href="/pricing" className="text-muted footer-links">
               Calculators
             </a>
             <br />

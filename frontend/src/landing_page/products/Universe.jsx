@@ -5,7 +5,16 @@ import streakImg from "../../assets/images/streakLogo.png";
 import dittoImg from "../../assets/images/dittoLogo.png";
 import zerodhafund from "../../assets/images/zerodhaFundhouse.png";
 
+import { useNavigate } from "react-router-dom";
+
 function Universe() {
+
+  const navigate = useNavigate();
+
+  const handleSignup = () => {
+    navigate("/signup");
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -86,6 +95,7 @@ function Universe() {
         <button
           className="p-2 btn btn-primary fs-5 mb-5"
           style={{ width: "20%", margin: "0 auto" }}
+          onClick={handleSignup}
         >
           Sign up for free
         </button>

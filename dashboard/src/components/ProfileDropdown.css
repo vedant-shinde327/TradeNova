@@ -1,0 +1,204 @@
+.profile{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.profile-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    padding:6px 10px;
+    border-radius:12px;
+    transition:.25s;
+}
+
+.profile-btn:hover{
+    background:#f5f7fa;
+}
+
+.profile-btn img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.arrow{
+    font-size:18px;
+    color:#666;
+    transition:.25s;
+}
+
+.rotate{
+    transform:rotate(180deg);
+}
+
+.profile-dropdown{
+    position:absolute;
+    top:60px;
+    right:0;
+
+    width:280px;
+
+    background:#fff;
+    border-radius:18px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.12);
+
+    border:1px solid #ececec;
+
+    overflow:hidden;
+
+    z-index:9999;
+
+    animation:popup .25s ease;
+}
+
+@keyframes popup{
+
+from{
+    opacity:0;
+    transform:translateY(-10px) scale(.97);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+.profile-header{
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    padding:18px;
+
+    border-bottom:1px solid #f0f0f0;
+
+}
+
+.profile-header img{
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+}
+
+.profile-header h4{
+
+    margin:0;
+
+    font-size:16px;
+    font-weight:600;
+    color:#111;
+
+}
+
+.profile-header p{
+
+    margin-top:4px;
+
+    color:#7b7b7b;
+
+    font-size:13px;
+
+}
+
+.profile-dropdown a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 18px;
+
+    text-decoration:none;
+
+    color:#202124;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+.profile-dropdown a svg{
+
+    font-size:18px;
+
+    color:#666;
+
+}
+
+.profile-dropdown a:hover{
+
+    background:#f8f9fb;
+
+    color:#387ed1;
+
+}
+
+.profile-dropdown a:hover svg{
+
+    color:#387ed1;
+
+}
+
+.divider{
+
+    height:1px;
+
+    background:#ececec;
+
+    margin:6px 0;
+
+}
+
+.profile-dropdown button{
+
+    width:100%;
+
+    border:none;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:16px 18px;
+
+    font-size:15px;
+
+    color:#d93025;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.profile-dropdown button:hover{
+
+    background:#fff3f3;
+
+}
+
+.profile-dropdown button svg{
+
+    font-size:18px;
+
+}

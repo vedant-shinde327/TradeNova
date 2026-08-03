@@ -33,7 +33,7 @@ function Login() {
   /* ── ui-only state ── */
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading,] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
 
   /* ── original handlers (unchanged) ── */
@@ -44,25 +44,26 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+
     try {
-      const { data } = await axios.post(
+      const response = await axios.post(
         "http://localhost:3002/login",
-        { email, password },
-        { withCredentials: true },
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        },
       );
-      if (data.success) {
-        window.location.href = "http://localhost:5174";
-      } else {
-        alert(data.message);
+
+      if (response.data.success) {
+        window.location.href = "http://localhost:5173";
       }
     } catch (err) {
       console.log(err);
-      alert("Something went wrong");
     }
-    setLoading(false);
   };
-
   const fields = [
     {
       name: "email",

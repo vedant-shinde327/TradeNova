@@ -1,10 +1,10 @@
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
 
-const Home = () => {
+const Home = ({username}) => {
   return (
     <>
-      <TopBar />
+      <TopBar username={username}/>
       <Dashboard />
     </>
   );

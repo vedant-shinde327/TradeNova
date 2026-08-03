@@ -10,11 +10,10 @@ import About from "./landing_page/about/AboutPage";
 import Products from "./landing_page/products/ProductsPage";
 import Pricing from "./landing_page/pricing/PricingPage";
 import Support from "./landing_page/support/SupportPage";
-// import NotFound from "./landing_page/NotFound";
-
-
+import NotFound from "./landing_page/NotFound";
 
 function App() {
+  
   return (
     <>
       <Navbar />
@@ -26,7 +25,7 @@ function App() {
         <Route path="/products" element={<Products/>} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/support" element={<Support />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
