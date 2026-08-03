@@ -4,6 +4,7 @@ import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
 
 import Home from "./landing_page/home/HomePage";
+import Login from "./landing_page/signup/Login";
 import SignUp from "./landing_page/signup/Signup";
 import About from "./landing_page/about/AboutPage";
 import Products from "./landing_page/products/ProductsPage";
@@ -19,6 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products/>} />

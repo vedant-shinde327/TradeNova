@@ -1,0 +1,508 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+/* ─────────────────────────────────────────
+   ROOT & RESET
+───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.sn-root {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  min-height: 100vh;
+  background: #0b1220;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────
+   AMBIENT BLOBS
+───────────────────────────────────────── */
+.sn-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sn-blob--1 {
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(56, 126, 209, 0.28) 0%, transparent 70%);
+  top: -180px;
+  left: -120px;
+}
+
+.sn-blob--2 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(56, 126, 209, 0.18) 0%, transparent 70%);
+  bottom: -100px;
+  right: 20%;
+}
+
+/* ─────────────────────────────────────────
+   LAYOUT
+───────────────────────────────────────── */
+.sn-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─────────────────────────────────────────
+   LEFT BRAND PANEL
+───────────────────────────────────────── */
+.sn-brand {
+  flex: 0 0 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sn-brand::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(56, 126, 209, 0.04) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* Logo */
+.sn-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin-bottom: 52px;
+}
+
+.sn-logo svg {
+  color: #387ed1;
+  flex-shrink: 0;
+}
+
+/* Headline */
+.sn-headline {
+  max-width: 520px;
+}
+
+.sn-headline h1 {
+  font-size: clamp(38px, 4.5vw, 58px);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #fff;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+}
+
+.sn-accent {
+  color: #387ed1;
+}
+
+.sn-subline {
+  font-size: 15px;
+  color: #9ca3af;
+  line-height: 1.65;
+  max-width: 420px;
+  font-weight: 400;
+}
+
+/* Chart area */
+.sn-chart-wrap {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 560px;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+}
+
+/* Ticker cards */
+.sn-ticker {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* ─────────────────────────────────────────
+   RIGHT PANEL
+───────────────────────────────────────── */
+.sn-panel {
+  flex: 0 0 42%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(20px);
+}
+
+/* ─────────────────────────────────────────
+   GLASS CARD
+───────────────────────────────────────── */
+.sn-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 36px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(24px);
+  box-shadow:
+    0 0 0 1px rgba(56, 126, 209, 0.08),
+    0 24px 64px rgba(0, 0, 0, 0.45),
+    0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sn-card-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(56, 126, 209, 0.15);
+  border: 1px solid rgba(56, 126, 209, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #387ed1;
+  margin-bottom: 18px;
+}
+
+.sn-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.4px;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.sn-card-sub {
+  font-size: 13.5px;
+  color: #9ca3af;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+/* ─────────────────────────────────────────
+   FORM
+───────────────────────────────────────── */
+.sn-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ─────────────────────────────────────────
+   FIELD (floating label)
+───────────────────────────────────────── */
+.sn-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sn-field-icon {
+  position: absolute;
+  left: 14px;
+  color: #4b5563;
+  pointer-events: none;
+  transition: color 0.2s ease;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sn-label {
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13.5px;
+  color: #6b7280;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: left center;
+  z-index: 2;
+  background: transparent;
+  padding: 0 2px;
+  white-space: nowrap;
+}
+
+.sn-input {
+  width: 100%;
+  padding: 22px 44px 8px 40px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  font-size: 14px;
+  color: #fff;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  -webkit-autofill: inherit;
+}
+
+.sn-input:-webkit-autofill,
+.sn-input:-webkit-autofill:hover,
+.sn-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 999px #141e30 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff;
+}
+
+/* Floating label: elevated when focused OR has value */
+.sn-field--focused .sn-label,
+.sn-field--has-value .sn-label {
+  top: 10px;
+  transform: translateY(0) scale(0.8);
+  color: #387ed1;
+  font-weight: 500;
+}
+
+.sn-field--has-value:not(.sn-field--focused) .sn-label {
+  color: #6b7280;
+}
+
+.sn-field--focused .sn-field-icon {
+  color: #387ed1;
+}
+
+.sn-field--focused .sn-input {
+  border-color: #387ed1;
+  background: rgba(56, 126, 209, 0.06);
+  box-shadow: 0 0 0 3px rgba(56, 126, 209, 0.12);
+}
+
+/* Eye toggle */
+.sn-eye {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s ease;
+  z-index: 2;
+}
+
+.sn-eye:hover {
+  color: #9ca3af;
+}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.sn-btn-primary {
+  margin-top: 6px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #387ed1 0%, #2563eb 100%);
+  box-shadow: 0 4px 20px rgba(56, 126, 209, 0.35);
+  transition: box-shadow 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.1px;
+}
+
+.sn-btn-primary:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.sn-btn-primary:not(:disabled):hover {
+  box-shadow: 0 6px 28px rgba(56, 126, 209, 0.5);
+}
+
+.sn-btn-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sn-spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Divider */
+.sn-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 0;
+}
+
+.sn-divider span {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sn-divider p {
+  font-size: 12px;
+  color: #4b5563;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* Google button */
+.sn-btn-google {
+  margin-top: 14px;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.sn-btn-google:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Switch */
+.sn-switch {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.sn-link {
+  color: #387ed1;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+  transition: color 0.15s ease;
+}
+
+.sn-link:hover {
+  color: #5b9bd5;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE – TABLET
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .sn-brand {
+    flex: 0 0 52%;
+    padding: 48px 36px;
+  }
+
+  .sn-panel {
+    flex: 0 0 48%;
+  }
+
+  .sn-card {
+    padding: 32px 28px;
+  }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE – MOBILE
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .sn-layout {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .sn-brand {
+    flex: none;
+    padding: 36px 24px 24px;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .sn-logo {
+    margin-bottom: 28px;
+  }
+
+  .sn-headline h1 {
+    font-size: 32px;
+  }
+
+  .sn-chart-wrap {
+    height: 130px;
+    margin-top: 24px;
+  }
+
+  .sn-panel {
+    flex: none;
+    padding: 32px 20px 48px;
+    border-left: none;
+  }
+
+  .sn-card {
+    padding: 28px 22px;
+    border-radius: 20px;
+  }
+
+  .sn-blob--1 {
+    width: 320px;
+    height: 320px;
+  }
+
+  .sn-blob--2 {
+    width: 240px;
+    height: 240px;
+  }
+}
